@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{ word-spacing: 5px; }
+        #input1{ word-spacing: 20px; }
+        #input2{ word-spacing: 20px; }
+        #tt{ display: flex; justify-content: space-around;}
+        #resulttable{ display: flex; justify-content: center;}
+    </style>
+</head>
+<body>
+   <center> <button onclick="check()">Get Start</button> </center>
+   <br>
+   <br>
+   <br>
+   <center><h1>Your Input</h1></center>
+   <br>
+   <br>
+   <div id="tt">
+    <table id="input1">
+        <tr>
+            <td id="t1"></td>
+            <td id="t2"></td>
+            <td id="t3"></td>
+        </tr>
+        <tr>
+            <td id="t4"></td>
+            <td id="t5"></td>
+            <td id="t6"></td>
+        </tr>
+        <tr>
+            <td id="t7"></td>
+            <td id="t8"></td>
+            <td id="t9"></td>
+        </tr>
+    </table>
+    <table id="input2">
+        <tr>
+            <td id="t10"></td>
+            <td id="t11"></td>
+            <td id="t12"></td>
+        </tr>
+        <tr>
+            <td id="t13"></td>
+            <td id="t14"></td>
+            <td id="t15"></td>
+        </tr>
+        <tr>
+            <td id="t16"></td>
+            <td id="t17"></td>
+            <td id="t18"></td>
+        </tr>
+    </table>
+    </div>
+ <br><br>
+ <center><h1>Result</h1></center>
+ <br>
+ <br>
+ <br>
+ <br>
+ <table id="resulttable">
+    <tr>
+        <td id="t19"></td>
+        <td id="t20"></td>
+        <td id="t21"></td>
+    </tr>
+    <tr>
+        <td id="t22"></td>
+        <td id="t23"></td>
+        <td id="t24"></td>
+    </tr>
+    <tr>
+        <td id="t25"></td>
+        <td id="t26"></td>
+        <td id="t27"></td>
+    </tr>
+</table>
+
+
+<script>
+    function check() {
+        let matrixinputarray1 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+        let resulttable = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                matrixinputarray1[i][j] = Number(prompt(`Enter a number for Row ${i+1} Column ${j+1} in 1st Array`));
+            }
+        }
+        let matrixinputarray2 = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
+        for (let i = 0; i < 3; i++) {
+            for (let j = 0; j < 3; j++) {
+                matrixinputarray2[i][j] = Number(prompt(`Enter a number for Row ${i+1} Column ${j+1} in 2nd Array`));
+                resulttable[i][j] = matrixinputarray1[i][j] + matrixinputarray2[i][j];
+            }
+        }
+
+        document.querySelector("#t1").innerHTML = matrixinputarray1[0][0];
+        document.querySelector("#t2").innerHTML = matrixinputarray1[0][1];
+        document.querySelector("#t3").innerHTML = matrixinputarray1[0][2];
+        document.querySelector("#t4").innerHTML = matrixinputarray1[1][0];
+        document.querySelector("#t5").innerHTML = matrixinputarray1[1][1];
+        document.querySelector("#t6").innerHTML = matrixinputarray1[1][2];
+        document.querySelector("#t7").innerHTML = matrixinputarray1[2][0];
+        document.querySelector("#t8").innerHTML = matrixinputarray1[2][1];
+        document.querySelector("#t9").innerHTML = matrixinputarray1[2][2];
+
+        document.querySelector("#t10").innerHTML = matrixinputarray2[0][0];
+        document.querySelector("#t11").innerHTML = matrixinputarray2[0][1];
+        document.querySelector("#t12").innerHTML = matrixinputarray2[0][2];
+        document.querySelector("#t13").innerHTML = matrixinputarray2[1][0];
+        document.querySelector("#t14").innerHTML = matrixinputarray2[1][1];
+        document.querySelector("#t15").innerHTML = matrixinputarray2[1][2];
+        document.querySelector("#t16").innerHTML = matrixinputarray2[2][0];
+        document.querySelector("#t17").innerHTML = matrixinputarray2[2][1];
+        document.querySelector("#t18").innerHTML = matrixinputarray2[2][2];
+
+        document.querySelector("#t19").innerHTML = resulttable[0][0];
+        document.querySelector("#t20").innerHTML = resulttable[0][1];
+        document.querySelector("#t21").innerHTML = resulttable[0][2];
+        document.querySelector("#t22").innerHTML = resulttable[1][0];
+        document.querySelector("#t23").innerHTML = resulttable[1][1];
+        document.querySelector("#t24").innerHTML = resulttable[1][2];
+        document.querySelector("#t25").innerHTML = resulttable[2][0];
+        document.querySelector("#t26").innerHTML = resulttable[2][1];
+        document.querySelector("#t27").innerHTML = resulttable[2][2];
+    }
+</script>
+</body>
+</html>
